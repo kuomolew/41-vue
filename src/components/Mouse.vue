@@ -15,7 +15,11 @@ export default {
     data() {
         return {
             isShown: false,
-            text: 'Press Me'
+            text: 'Press Me',
+            hours: '',
+            minuts: '',
+            seconds: '',
+            
         }
     },
     methods: {
@@ -27,7 +31,13 @@ export default {
             this.text = 'Button';
         },
         showTime() {
-            this.text = 'Time';
+            this.hours = new Date,
+            this.minuts = new Date,
+            this.seconds = new Date,
+            this.hours = this.hours.getHours();
+            this.minuts = this.minuts.getMinutes();
+            this.seconds = this.seconds.getUTCSeconds();
+            this.text = `${this.hours}:${this.minuts}:${this.seconds}`;
         }
     },
 }
